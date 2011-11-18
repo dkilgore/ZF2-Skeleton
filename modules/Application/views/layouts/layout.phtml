@@ -1,0 +1,54 @@
+<?php echo $this->doctype('HTML5'); ?>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <?php echo $this->headTitle(); ?>
+  <meta name="description" content="">
+	<meta name="author" content="">
+
+	<!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS
+  ================================================== -->
+	<?php $this->headLink()->prependStylesheet('/css/base.css'); ?>
+	<?php $this->headLink()->appendStylesheet('/css/skeleton.css'); ?>
+	<?php echo $this->headLink()->appendStylesheet('/css/layout.css'); ?>
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<?php $this->headScript()->prependFile('http://code.jquery.com/jquery-1.6.4.min.js');?>
+	<?php echo $this->headScript()->appendFile('javascripts/tabs.js');?>
+	<!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="images/favicon.ico">
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  
+</head>
+<body>
+  <div class="container">
+		<div class="three columns sidebar">
+			<nav>
+				<h3 id="logo">Albums</h3>
+				<ul>
+					<li><a href="<?php echo $this->url(array('controller'=>'album', 'action'=>'index'),array('name'=>'default'));?>">List</a></li>
+					<li><a href="#two">Two</a></li>
+					<li><a href="#three">Three</a></li>
+					<li><a href="#four">Four</a></li>
+				</ul>
+			</nav>
+			&nbsp;
+		</div>
+    <div class="twelve columns offset-by-one content">
+      <?php echo $this->raw('content'); ?>
+    </div>
+  </div>
+</body>
+</html>
